@@ -269,6 +269,25 @@
                   "type": "string",
                   "x-ms-visibility": "internal",
                   "x-ms-notification-url": true
+                },
+                "additionalFormIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "Unique id for the form. Leave blank to trigger for all forms in the selected team.",
+                    "x-ms-summary": "Form",
+                    "x-ms-visibility": "important",
+                    "x-ms-dynamic-values": {
+                      "operationId": "Forms",
+                      "value-path": "fields/tfFormId",
+                      "value-title": "fields/tfTitle",
+                      "parameters": {
+                        "groupId": {
+                          "parameter": "groupId"
+                        }
+                      }
+                    }
+                  }
                 }
               },
               "required": [
